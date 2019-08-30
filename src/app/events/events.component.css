@@ -1,0 +1,32 @@
+.header {
+  background-color: black;
+}
+
+.footer {
+  background-color: black;
+}
+
+a{
+  color: white;
+}
+
+i{
+  color: white;
+}
+
+label{
+  color: white;
+}
+
+body{
+  background-image: url("https://img.buzzfeed.com/buzzfeed-static/static/2019-03/18/19/asset/buzzfeed-prod-web-03/anigif_sub-buzz-681-1552951785-1.gif");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  position: relative;
+  top: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}

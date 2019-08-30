@@ -1,0 +1,12 @@
+CS5200 Project Front End Code
+By Ayush Shukla and Javesh Monga
+
+The project contains the Front End Code for our Game of Thrones Website.
+It requires the back end to be running on port 5000 to populate the data.
+
+To set up the dev environment.
+1) Install Node.js from https://nodejs.org/en/download/ (it will also provide you with npm tool to install node libraries from the terminal)
+2) Install angular by running $ npm install -g @angular/cli.
+3) Then in the project directory run $ npm install
+4) run $ ng serve
+ The app will start running on localhost:4200

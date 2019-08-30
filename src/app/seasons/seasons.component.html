@@ -1,0 +1,48 @@
+
+
+  <header class="modal-header header">
+    <nav class="navbar-dark na">
+      <a routerLink="/" class="btn btn-link nav-item">Home</a>
+    </nav>
+  </header>
+
+  <!--<br>-->
+
+  <body>
+  <div class="container">
+  <br>
+    <br>
+    <br>
+    <ul>
+      <li class="row">
+        <b class="col-4">Season Number</b>
+        <b class="col-4">Number of Episodes</b>
+      </li>
+    <br>
+      <li class="row">
+        <input [(ngModel)]="nums" class="col-4 form-control" placeholder="Enter Season Number" type="number">
+        <input [(ngModel)]="eps" class="col-4 form-control" placeholder="Enter Number of Episodes" type="number">
+        <button (click)="createSeason(season)" class="btn btn-success">+</button>
+        <button (click)="updateSeason(season)" class="btn btn-primary">Save Update</button>
+      </li>
+    <br>
+      <div *ngFor="let season of seasons">
+        <li class="row form-row">
+          <div class="col-4">
+            <b>{{season[0]}}</b>
+          </div>
+          <div class="col-4">
+            <b>{{season[1]}}</b>
+          </div>
+          <div>
+            <button (click)="deleteSeason(season[0])" class="btn btn-danger">X</button>
+          </div>
+          <div>
+            <button (click)="populate(season)" class="btn btn-link">Populate Data</button>
+          </div>
+        </li>
+          <br>
+      </div>
+    </ul>
+  </div>
+  </body>

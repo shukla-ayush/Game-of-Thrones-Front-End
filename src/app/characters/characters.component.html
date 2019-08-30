@@ -1,0 +1,85 @@
+<div>
+
+  <header class="modal-header header">
+    <nav class="navbar-dark na">
+      <a routerLink="/" class="btn btn-link nav-item">Home</a>
+    </nav>
+  </header>
+
+  <body>
+  <div class="container">
+    <br>
+    <br>
+    <br>
+  <ul>
+    <li class="row">
+      <b> Filters</b>
+      <select [(ngModel)]="selected_house" class="col-2 form-control">
+        <option selected="selected" style="display: none;">Select a House</option>
+        <option [value]="house[0]" *ngFor="let house of houses" class="form-control">{{house[0]}}</option>
+      </select>
+      <select [(ngModel)]="selected_kingdom" class="col-2 form-control">
+        <option selected="selected" style="display: none;">Select a Kingdom</option>
+        <option [value]="kingdom[0]" *ngFor="let kingdom of kingdoms" class="form-control">{{kingdom[0]}}</option>
+      </select>
+      <select [(ngModel)]="selected_status" class="col-2 form-control">
+        <option selected="selected" style="display: none;">Select Dead/Alive</option>
+        <option value=1 class="form-control">Alive</option>
+        <option value=0 class="form-control">Dead</option>
+      </select>
+      <button (click)="filter(selected_house, selected_kingdom, selected_status)" class="btn btn-success">Apply Filters</button>
+      <button (click)="ngOnInit()" class="btn btn-danger">Remove Filters</button>
+    </li>
+    <br>
+    <br>
+    <br>
+
+    <li class="row">
+      <b class="col-2">Character Name</b>
+      <b class="col-2">Character House</b>
+      <b class="col-4">Character Description</b>
+      <b class="col-2">Dead/Alive</b>
+    </li>
+  <br>
+    <li class="row">
+      <input [(ngModel)]="name" class="col-2 form-control" placeholder="Enter Character Name">
+      <input [(ngModel)]="house" class="col-2 form-control" placeholder="Enter Character House">
+      <input [(ngModel)]="description" class="col-4 form-control" placeholder="Enter Character description">
+      <select [(ngModel)]="status" class="col-2 form-control">
+        <option value=1 class="form-control">Alive</option>
+        <option value=0 class="form-control">Dead</option>
+      </select>
+      <button (click)="createCharacter(character)" class="btn btn-success">+</button>
+      <button (click)="updateCharacter(character)" class="btn btn-primary">Save Update</button>
+    </li>
+  <br>
+    <div *ngFor="let character of characters">
+      <li class="row form-row">
+        <div class="col-2">
+          <b>{{character[0]}}</b>
+        </div>
+        <div class="col-2">
+          <b>{{character[1]}}</b>
+        </div>
+        <div class="col-4">
+          <b>{{character[2]}}</b>
+        </div>
+        <div class = "col-2" *ngIf="character[3] == 0">
+          <b>Dead</b>
+        </div>
+        <div class = "col-2" *ngIf="character[3] == 1">
+          <b>Alive</b>
+        </div>
+        <div>
+          <button (click)="deleteCharacter(character[0])" class="btn btn-danger">X</button>
+        </div>
+        <div>
+          <button (click)="populate(character)" class="btn btn-link">Populate Data</button>
+        </div>
+      </li>
+        <br>
+    </div>
+  </ul>
+  </div>
+  </body>
+</div>
